@@ -1,12 +1,69 @@
-Stress Detection System using MobileNetV2
-This repository contains a complete pipeline for Real-Time Stress Detection using deep learning and computer vision. The system uses MobileNetV2 for classification and MTCNN for robust face detection in live video streams.
-Features
-Automated Dataset Mapping: Automatically categorizes image folders into stressed or not_stressed based on folder names (e.g., "fear," "angry," "happy," "neutral").
+# FacialStressDetector: real-time stress monitoring works immediately using the provided trained model.
+ 
+Real-Time Facial Stress Detection using Deep Learning
 
-Transfer Learning: Leverages the pre-trained MobileNetV2 architecture for high-performance feature extraction.
+FaceStressNet is a real-time **facial stress monitoring system** built using deep learning and computer vision.  
+It detects faces from a live camera feed and predicts whether a person appears **STRESSED** or **NOT STRESSED** based on facial visual cues.
 
-Dual Mode Architecture: Supports both Binary classification (Direct Stress/No Stress) and Multiclass classification with keyword inference.
+The repository includes a **pre-trained model**, allowing instant real-time stress monitoring without requiring any dataset or training.
 
-Live Inference: Real-time camera processing with MTCNN face tracking and predictive smoothing.
+---
 
-CPU Optimized: Explicitly configured to run efficiently on CPU environments.
+## Highlights
+
+- ✅ Plug-and-play real-time stress detection (no training required)
+- ✅ Face detection using **MTCNN**
+- ✅ Stress classification using **MobileNetV2 (transfer learning)**
+- ✅ Prediction smoothing for stable live output
+- ✅ Supports both **binary** and **multiclass** training
+- ✅ CPU-only execution (no GPU needed)
+- ✅ Automatic dataset keyword mapping (stress / non-stress)
+
+---
+
+## System Overview
+
+1. **Face Detection**
+   - Faces are detected from live webcam feed using MTCNN.
+   - Only high-confidence detections are processed.
+
+2. **Stress Classification**
+   - A CNN model based on MobileNetV2 predicts stress likelihood.
+   - Multiclass emotion predictions are internally mapped to stress states.
+
+3. **Temporal Smoothing**
+   - Predictions are averaged over a sliding window to avoid flickering results.
+
+4. **Live Visualization**
+   - Bounding boxes and stress labels are displayed in real time.
+
+---
+
+## Quick Start (Real-Time Monitoring)
+
+> ⚡ No dataset required — the model is already trained.
+
+### 1️⃣ Install dependencies
+
+pip install tensorflow opencv-python mtcnn numpy tqdm
+python stress_detection.py
+
+## 📊 Dataset (Training Only)
+
+The model included in this repository is **already trained** and can be used
+directly for real-time stress monitoring.
+
+A dataset is **NOT required** to run live detection.
+
+### Training Dataset Overview
+- Multiclass facial emotion image dataset
+- Class folders such as: `happy`, `sad`, `angry`, `neutral`, `anxious`, etc.
+- Images are automatically mapped to **stressed / not_stressed**
+  using keyword-based logic during training
+- Only face regions are used for learning
+
+### Notes
+- The dataset is **not included** in this repository due to size and licensing
+- Any standard facial emotion dataset can be used for retraining
+- Training is optional and only required if model re-training is desired
+
