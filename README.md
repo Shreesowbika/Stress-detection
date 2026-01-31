@@ -39,16 +39,12 @@ The repository includes a **pre-trained model**, allowing instant real-time stre
 
 ---
 
-## Quick Start (Real-Time Monitoring)
+### Install dependencies
 
-> ⚡ No dataset required — the model is already trained.
+** pip install tensorflow opencv-python mtcnn numpy tqdm **
+** python stress_detection.py **
 
-### 1️⃣ Install dependencies
-
-pip install tensorflow opencv-python mtcnn numpy tqdm
-python stress_detection.py
-
-## 📊 Dataset (Training Only)
+## Dataset (Training Only)
 
 The model included in this repository is **already trained** and can be used
 directly for real-time stress monitoring.
