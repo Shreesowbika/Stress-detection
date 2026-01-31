@@ -2,7 +2,7 @@
  
 Real-Time Facial Stress Detection using Deep Learning
 
-FaceStressNet is a real-time **facial stress monitoring system** built using deep learning and computer vision.  
+FacialStressDetector is a real-time **facial stress monitoring system** built using deep learning and computer vision.  
 It detects faces from a live camera feed and predicts whether a person appears **STRESSED** or **NOT STRESSED** based on facial visual cues.
 
 The repository includes a **pre-trained model**, allowing instant real-time stress monitoring without requiring any dataset or training.
